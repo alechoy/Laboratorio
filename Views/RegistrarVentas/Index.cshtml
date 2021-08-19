@@ -1,0 +1,24 @@
+@model FormularioLabTarea.Models.RegistrarVentas
+@{
+    ViewData["Title"] = "Ventas";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Registrar Ventas</h1>
+       <form asp-controller="Ventas" asp-action="Create">
+
+        <label asp-for="Nombre" class="control-label"></label>
+        <input asp-for="Nombre" class="form-control form-control-sm" type="text" placeholder="Escribe el nombre" aria-label=".form-control-sm" />
+
+        <label asp-for="Precio" class="control-label"></label>
+        <input asp-for="Precio" class="form-control form-control-sm" type="text" placeholder="Precio del producto" aria-label=".form-control-sm"/>
+
+        <label asp-for="Cantidad" class="control-label"></label>
+        <input asp-for="Cantidad" class="form-control form-control-sm" type="text" placeholder="Cantidad del producto" aria-label=".form-control-sm"/>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Ventas</button> 
+        </div>
+    </form>
+    <h1>@ViewData["Message"]</h1>
+</div>
