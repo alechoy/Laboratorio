@@ -10,19 +10,20 @@ namespace FormularioLabTarea.Controllers
             return View();
         }
 
-        public IActionResult Create()
-        {
-           ViewData["Message"] = "Venta registrada"; 
-           return View("Index");
-        }
+        [HttpPost]
 
-        [HttpGet]
-
-        public IActionResult Calcular(RegistrarVentas objventas)
+        public IActionResult Calcular(RegistrarVentas objRegistrarVentas)
         {
-           double resultado=0;
-           resultado =(objventas.Precio * objventas.Cantidad)*1.18;
-           ViewData["Message"] = "El precio total del producto incluido IGV es " + resultado;
+           double resultadoTotal=0;
+           double subtotal=0;
+
+           subtotal = objRegistrarVentas.Precio * objRegistrarVentas.Cantidad;
+
+           resultadoTotal = subtotal* 1.18;
+
+           ViewData["Message"] = "El precio total del producto incluido IGV es " + resultadoTotal;
+           ViewData["Message1"] = "El subtotal del producto es " + subtotal;
+
 
            return View("Index");
         }

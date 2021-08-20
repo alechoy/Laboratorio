@@ -5,7 +5,7 @@
 
 <div class="text-center">
     <h1 class="display-4">Registrar Ventas</h1>
-       <form asp-controller="Ventas" asp-action="Create">
+       <form asp-controller="RegistrarVentas" asp-action="Calcular">
 
         <label asp-for="Nombre" class="control-label"></label>
         <input asp-for="Nombre" class="form-control form-control-sm" type="text" placeholder="Escribe el nombre" aria-label=".form-control-sm" />
@@ -21,4 +21,5 @@
         </div>
     </form>
     <h1>@ViewData["Message"]</h1>
+    <h1>@ViewData["Message1"]</h1>
 </div>
